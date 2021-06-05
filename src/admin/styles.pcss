@@ -1,0 +1,47 @@
+@import "normalize.css";
+@import "../../src/styles/mixins.pcss";
+@import "../../src/styles/layout/base.pcss";
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+  &--header {
+    padding: 15px 0 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content {
+    &--header {
+      max-width: 100%;
+      width: 100%;
+      padding: 50px 0 53px;
+      display: flex;
+      @include phones {
+        max-width: 320px;
+        width: 100%;
+        flex-direction: column;
+      }
+    }
+    &--main {
+      max-width: 100%;
+      width: 100%;
+      padding-bottom: 30px;
+    }
+  }
+  &--content {
+    @include phones {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+}
+
+.wrapper {
+  width: 100%;
+  height: 100%;
+  background: url("./images/background.png") no-repeat;
+  background-size: cover;
+  overflow: auto;
+}

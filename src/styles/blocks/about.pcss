@@ -1,0 +1,110 @@
+.about {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    @include phones {
+      flex-direction: column;
+    }
+  }
+  &__column {
+    min-width: 286px;
+    display: flex;
+    flex-direction: column;
+    &:last-child {
+      @include phones {
+        margin-top: 45px;
+      }
+    }
+  }
+  &__img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin-right: 14px;
+    @include phones {
+      align-self: center;
+      margin-right: 0;
+    }
+  }
+  &__info {
+    max-width: 286px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 78px;
+  }
+  &__item {
+    margin-top: 19px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.3);
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-top: 16px;
+    }
+    &--white {
+      color: #ffffff;
+    }
+  }
+  &__title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  &__name {
+    margin-top: 21px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #ffffff;
+  }
+  &__text {
+    margin-top: 31px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    @include tablets {
+      max-width: 354px;
+    }
+  }
+  &__subtitle {
+    position: relative;
+    margin-top: 77px;
+    font-family: Open Sans;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 575px;
+    &::before {
+      content: "*";
+      left: -58px;
+      top: -16px;
+      position: absolute;
+      font-size: 48px;
+      line-height: 65px;
+      color: rgba(219, 2, 0, 0.5);
+      @include phones {
+        left: -30px;
+        top: -8px;
+      }
+    }
+    @include tablets {
+      max-width: 399px;
+    }
+  }
+}

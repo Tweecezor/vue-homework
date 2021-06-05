@@ -1,0 +1,48 @@
+@import "../../../styles/mixins.pcss";
+.header {
+  &-component {
+    background: #43436b;
+  }
+  &__block {
+    &--left {
+      display: flex;
+      align-items: center;
+      @include phones {
+        flex-direction: column;
+      }
+    }
+  }
+  &__title {
+    margin-left: 25px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    color: rgba(255, 255, 255, 0.5);
+    @include phones {
+      display: none;
+    }
+  }
+  &__exit {
+    border: 0;
+    background: transparent;
+    text-decoration: underline;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(255, 255, 255, 0.9);
+    @include phones {
+      display: none;
+    }
+    &--second {
+      display: none;
+      @include phones {
+        display: block;
+        margin-right: 40px;
+      }
+    }
+  }
+}

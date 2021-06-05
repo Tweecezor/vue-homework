@@ -1,0 +1,18 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Главная страница
+  body
+    .wrapper
+      .welcom-section
+        include ./section/header.pug
+        include ./section/about.pug
+      include ./section/skills.pug
+      include ./section/work.pug
+      include ./section/reviews.pug
+      include ./section/footer.pug

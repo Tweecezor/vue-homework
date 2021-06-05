@@ -1,0 +1,32 @@
+@import "../../../styles/mixins.pcss";
+.skills {
+  &-content {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__percent {
+    width: 15%;
+    &:before {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -50%);
+      content: "%";
+    }
+    @include tablets {
+      width: 25%;
+    }
+  }
+  &__name {
+    width: 50%;
+  }
+  &__action {
+    &s {
+      display: flex;
+      align-items: center;
+    }
+    &:last-child {
+      margin-left: 20px;
+    }
+  }
+}

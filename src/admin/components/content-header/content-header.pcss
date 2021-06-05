@@ -1,0 +1,17 @@
+@import "../../../styles/mixins.pcss";
+.content__header {
+  &--title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 21px;
+    line-height: 29px;
+    color: #414c63;
+    margin-right: 54px;
+  }
+  &--title {
+    @include phones {
+      margin-bottom: 24px;
+    }
+  }
+}

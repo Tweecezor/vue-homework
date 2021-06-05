@@ -1,0 +1,23 @@
+- 
+    var social = [
+      {image: 'insta', href: 'about'}, 
+      {image: 'github', href: 'skills'}, 
+      {image: 'vk', href: 'works'}, 
+      {image: 'envelope', href: 'review'}
+    ]
+
+section.header
+    .container.container--header
+        .header__inner
+            .header__logo BA
+            +nav('header')
+            +social('header', social)
+        .header__info
+            h2.header__title Личный сайт
+                p веб разработчика
+            h1.header__subtitle Владимир 
+                p Астаханов
+
+        .scroll 
+            span.scroll__item.scroll__item--header Скролл
+            +icon('scroll', 'scroll__icon scroll__icon--header')

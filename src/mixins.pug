@@ -1,0 +1,29 @@
+mixin icon(name, className)
+  - var icon = require(`images/icons/${name}.svg`).default;
+  svg(class=className viewBox=icon.viewBox preserveAspectRatio="none")
+    use(xlink:href=`sprite.svg#${icon.id.replace('-usage', '')}`)
+
+mixin image(path, className)
+  img(src=require(`images/${path}`).default class=className)
+
+mixin nav(className)
+  - 
+    const nav = [
+      {title: 'Обо мне', href: 'about'}, 
+      {title: 'Навыки', href: 'skills'}, 
+      {title: 'Работы', href: 'works'}, 
+      {title: 'Отзывы', href: 'review'}
+    ]
+  ul.nav(class=`nav__${className}`)
+    each item in nav 
+        li.nav__item(class=`nav__item--${className}`)
+            a.nav__link(href=item.href class=`nav__link--${className}`)=item.title
+
+mixin social(className, social)
+  ul.social(class=`social__${className}`)
+    each item in social
+      li.social__item(class=`social__item--${className}`)
+        a.social__link(class=`social__link--${className}` href=item.href)
+          +icon(item.image, `social__icon social__icon--${className}`)
+    - if(className === 'header')
+      li.social__burger

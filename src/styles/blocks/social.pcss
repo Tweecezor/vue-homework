@@ -1,0 +1,81 @@
+.social {
+  display: flex;
+  align-items: flex-end;
+  &__item {
+    margin-left: 35px;
+    &:first-child {
+      margin-left: 0;
+    }
+    &--header {
+      @include phones {
+        display: none;
+      }
+    }
+    &--footer {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      transition: all 0.3s ease;
+      &:hover {
+        border-color: #ff9a00;
+      }
+    }
+  }
+  &__link {
+    &--footer {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+      width: 100%;
+      &:hover > .social__icon {
+        fill: #ff9a00;
+      }
+    }
+  }
+  &__icon {
+    width: 32px;
+    height: 32px;
+    fill: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    &:hover {
+      fill: #ff9a00;
+    }
+    &--footer {
+      width: 21px;
+      height: 21px;
+    }
+  }
+  &__footer {
+    margin-top: 40px;
+  }
+  &__burger {
+    display: none;
+    @include tablets {
+      cursor: pointer;
+      position: relative;
+      display: block;
+      margin-left: 88px;
+      width: 29px;
+      align-self: center;
+      height: 24px;
+      border: 5px solid white;
+      border-left: 0;
+      border-right: 0;
+      &::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        transform: translate(0, -50%);
+        height: 5px;
+        background: white;
+        width: 100%;
+        align-self: center;
+        @include phones {
+          height: 6px;
+        }
+      }
+    }
+  }
+}

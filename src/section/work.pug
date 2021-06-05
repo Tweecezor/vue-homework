@@ -1,0 +1,63 @@
+section.work 
+    .container.container--work
+        .work__inner
+            .work__title Мои работы
+            #preview-block
+
+script(type="text/x-template")#work-display
+    .work__block
+        preview(
+            :currentImage="currentImage",
+            :works="works",
+            :currentIndex="currentIndex",
+            @slide="slide",
+            @slideTo="slideTo"
+        )
+        info(
+            :currentImage="currentImage"
+        )
+
+script(type="text/x-template")#work-preview
+    .work__left(:data-slide="currentImage.id")
+        .work__images
+            .work__slider
+                img(:src="currentImage.photo").work__img
+                thumbs(
+                    :works="works",
+                    :currentIndex="currentIndex",
+                    @slideTo="$emit('slideTo', $event)"
+                )
+            btns(
+                @slide="$emit('slide', $event)",
+                :currentIndex="currentIndex",
+                :works="works"
+            )
+            
+
+script(type="text/x-template")#work-thumbs
+    ul.work__list 
+        li(v-for="(work,index) in works" :key="work.id").work__item
+            img(:src="work.photo" :class="getActiveFrame(index)" @click="$emit('slideTo', index)").work__img--small
+
+script(type="text/x-template")#work-btns
+    .work__slide
+        button.work__button(@click="$emit('slide', 'next')", :class="getActive('next')")
+            +icon('right', 'work__click')
+        button.work__button(@click="$emit('slide', 'prev')", :class="getActive('prev')")
+            +icon('left', 'work__click')
+
+script(type="text/x-template")#work-info
+    .work__right
+        tags(
+            :tags="tagsArray"
+        )
+        .work__info
+            .work__caption {{currentImage.title}}
+            .work__subcaption {{currentImage.desc}}
+            .work__icons 
+                +icon('link', 'work__icon')
+                a.work__link(:href="currentImage.link") Посмотреть сайт
+
+script(type="text/x-template")#work-tags
+    ul.work__subject 
+        li(v-for="tag in tags").work__object {{tag}}

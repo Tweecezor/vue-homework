@@ -1,0 +1,233 @@
+.work {
+  min-height: 100vh;
+  &__inner {
+  }
+  &__left {
+    position: relative;
+    display: inline-flex;
+    max-width: 1028px;
+    max-height: 549px;
+    height: fit-content;
+    &::after {
+      content: attr(data-slide);
+      position: absolute;
+      right: -158px;
+      top: 41.5%;
+      transform: translate(0, -50%);
+      font-family: Open Sans;
+      font-style: normal;
+      font-weight: 800;
+      font-size: 400px;
+      line-height: 48px;
+      color: #e6e6e6;
+      z-index: -1;
+      @include desktop {
+        top: 47%;
+        right: -15px;
+      }
+      @include tablets {
+        top: 61%;
+        right: -114px;
+      }
+      @include phones {
+        display: none;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    position: absolute;
+    right: 0;
+    bottom: 59px;
+    max-width: 80%;
+    @include phones {
+      display: none;
+    }
+  }
+  &__img {
+    width: 100%;
+    &--small {
+      width: 173px;
+      cursor: pointer;
+      object-fit: cover;
+      &:hover,
+      &.active {
+        border: 2px solid #ff9a00;
+      }
+      @include desktop {
+        max-width: 116px;
+        width: 100%;
+      }
+    }
+  }
+  &__images {
+    display: inline-flex;
+    width: 100%;
+    @include desktop {
+      width: 88%;
+    }
+    @include tablets {
+      width: 100%;
+    }
+  }
+  &__slider {
+    position: relative;
+    display: inline-block;
+  }
+  &__title {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #333c49;
+    margin-bottom: 83px;
+    @include phones {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+  }
+  &__slide {
+    align-self: flex-end;
+    margin-bottom: 60px;
+    @include phones {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin-bottom: 0;
+    }
+  }
+  &__button {
+    cursor: default;
+    background: #333c49;
+    width: 53px;
+    height: 53px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &.active {
+      cursor: pointer;
+      & > .work__click {
+        opacity: 1;
+      }
+      &:hover > .work__click {
+        fill: #ff9a00;
+      }
+    }
+    & > .work__click {
+      opacity: 0.2;
+    }
+    @include desktop {
+      width: 34px;
+      height: 34px;
+    }
+    @include phones {
+      width: 55px;
+      height: 55px;
+    }
+  }
+  &__click {
+    fill: #ffffff;
+    transition: all 0.3s ease;
+    width: 10;
+    height: 17px;
+  }
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    @include tablets {
+      flex-direction: column;
+    }
+  }
+  &__subject {
+    display: flex;
+    @include tablets {
+      flex-direction: row;
+      justify-content: center;
+    }
+  }
+  &__object {
+    background: #f3f6f9;
+    border-radius: 40px;
+    padding: 14px 22px;
+    margin-left: 8px;
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+  &__right {
+    @include tablets {
+      margin-top: 56px;
+    }
+  }
+  &__caption {
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 41px;
+    color: #333c49;
+    margin-top: 35px;
+    max-width: 207px;
+    @include tablets {
+      text-align: center;
+      max-width: none;
+    }
+    @include phones {
+      text-align: left;
+    }
+  }
+  &__subcaption {
+    margin-top: 26px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 30px;
+    color: rgba(51, 60, 73, 0.8);
+    max-width: 336px;
+    @include tablets {
+      max-width: 480px;
+      margin: 26px auto 0;
+      text-align: center;
+    }
+    @include phones {
+      margin-top: 10px;
+    }
+    @include phones {
+      text-align: left;
+    }
+  }
+  &__icons {
+    margin-top: 45px;
+    display: flex;
+    @include tablets {
+      justify-content: center;
+    }
+    @include phones {
+      justify-content: flex-start;
+    }
+  }
+  &__icon {
+    width: 22px;
+    height: 22px;
+    fill: #586ed3;
+  }
+  &__link {
+    margin-left: 16px;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    color: #586ed3;
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__info {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}

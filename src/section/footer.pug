@@ -1,0 +1,25 @@
+- 
+    var social = [
+      {image: 'insta', href: 'about'}, 
+      {image: 'vk', href: 'works'},
+      {image: 'github', href: 'skills'},
+      {image: 'envelope', href: 'review'}
+    ]
+
+section.footer 
+    .container.container--footer
+        .footer__inner
+            .footer__info
+                .footer__copyright © 2021
+                .footer__author 
+                    .footer__author--name Владимир Астахов
+                    .footer__author--text Личный сайт 
+                        p веб-разработчика
+            .footer__more
+                .footer__block
+                    +nav('footer')
+                    .footer__block--text Этот сайт я сделал в рамках обучения в Школе онлайн образования Loftschool
+                    +social('footer', social)
+                .footer__phrase
+                    .footer__phrase--text Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает где вы живете
+                    .footer__phrase--author Martin Golding

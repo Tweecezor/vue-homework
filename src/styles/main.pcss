@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800");
+@import "normalize.css";
+@import "./mixins.pcss";
+@import "./layout/base.pcss";
+@import "./blocks/*.pcss";
+
+.container {
+  &--header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 58px 0 88px;
+    min-height: 100vh;
+    @include desktop {
+      padding: 54px 0 201px;
+    }
+    @include tablets {
+      padding: 54px 0 601px;
+    }
+    @include phones {
+      padding: 56px 0 350px;
+    }
+  }
+  &--about {
+    padding: 88px 0 274px;
+    max-width: 1006px;
+    width: 100%;
+    @include desktop {
+      padding: 201px 0 199px;
+    }
+    @include tablets {
+      max-width: 790px;
+    }
+    @include phones {
+      max-width: 310px;
+    }
+  }
+  &--skills {
+    padding: 144px 0 147px;
+    display: flex;
+    justify-content: flex-end;
+    max-width: 1310px;
+    @include tablets {
+      padding: 90px 0 325px;
+      max-width: 657px;
+      justify-content: center;
+    }
+    @include phones {
+      padding: 82px 0 325px;
+    }
+  }
+  &--work {
+    padding: 197px 0 209px;
+    max-width: 1495px;
+    @include desktop {
+      padding: 148px 0 115px;
+      max-width: 1098px;
+    }
+    @include tablets {
+      padding: 119px 0 115.37px;
+      max-width: 672px;
+    }
+    @include phones {
+      max-width: 100%;
+      width: 100%;
+    }
+  }
+  &--reviews {
+    padding: 138px 0 198px;
+    @include desktop {
+      padding: 140px 0 194px;
+      max-width: 1150px;
+    }
+    @include phones {
+      padding: 70px 0 60px;
+      max-width: 320px;
+    }
+  }
+  &--footer {
+    padding: 62px 0 74px;
+    @include desktop {
+      padding: 63px 0 77px;
+      max-width: 1110px;
+    }
+    @include tablets {
+      padding: 48px 0 112px;
+      max-width: 677px;
+    }
+    @include phones {
+      min-height: 100vh;
+      padding: 0;
+    }
+  }
+}
+
+.welcom-section {
+  background: url("../images/content/1800.png") no-repeat;
+  background-size: cover;
+}

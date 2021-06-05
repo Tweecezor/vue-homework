@@ -1,0 +1,52 @@
+.nav {
+  display: flex;
+  align-items: center;
+  &__item {
+    margin-left: 60px;
+    &:first-child {
+      margin-left: 0;
+    }
+    @include phones {
+      width: 50%;
+      margin-left: 0;
+    }
+    &--footer {
+      @include phones {
+        &:nth-child(n + 3) {
+          margin-top: 22px;
+        }
+      }
+    }
+  }
+  &__link {
+    text-decoration: none;
+    font-family: Open Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #ffffff;
+    transition: all 0.3s ease;
+    &:hover {
+      color: #4b6fd7;
+      text-decoration: underline;
+    }
+    &--footer {
+      white-space: nowrap;
+      &:hover {
+        color: #ff9a00;
+      }
+    }
+  }
+  &__header {
+    @include tablets {
+      display: none;
+    }
+  }
+  &__footer {
+    @include phones {
+      flex-flow: row-reverse;
+      flex-wrap: wrap;
+    }
+  }
+}

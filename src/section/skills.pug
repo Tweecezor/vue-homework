@@ -1,0 +1,34 @@
+- const dashed = 425
+- const radius = 68
+
+section.skills 
+    .container.container--skills
+        .skills__inner
+            .skills__title Чем я могу быть полезен вам
+            .skills__subtitle Этот сайт я сделал в рамках обучения в Школе онлайн образования 
+                p LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите,
+                p как тут всё классно и красиво!
+            #skills-component
+
+script(type="text/x-template")#skills-list
+    <div>
+        .skills__block(v-for="category in skills" :key="category.id")
+            skills-row(:category="category")
+    </div>
+
+script(type="text/x-template")#skills-row
+    .skills__caption {{category.category}}
+        ul.skills__list 
+            li.skills__item(v-for="skill in category.skills" :key="skill.id")
+                skills-item(:skill="skill")
+
+script(type="text/x-template")#skills-item
+    <div>
+        svg(viewBox=`0 0 ${radius * 2 + 20} ${radius * 2 + 20}`).skills__circle-shape
+            circle(cx=radius + 10 cy=radius + 10 r=radius).skills__circle.skills__circle--layer--under
+            circle(ref="colored-circle" cx=radius + 10 cy=radius + 10 r=radius stroke="url(#gradient)" transform=`rotate(180 ${radius + 10} ${radius + 10})` style=`stroke-dasharray: ${dashed};`).skills__circle.skills__circle--layer--above
+            linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0%")
+                stop(offset="0%" stop-color="#ff4e00")
+                stop(offset="100%" stop-color="#ec9f05")
+        .skills__text {{skill.title}}
+    </div>

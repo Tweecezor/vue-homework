@@ -1,0 +1,38 @@
+section.reviews
+    .container.container--reviews
+        #reviews-block
+
+script(type="text/x-template")#reviews-display
+    .reviews__inner
+        .reviews__header 
+            .reviews__title Что обо мне говорят
+            btns(
+                :progress="progress"
+                @slide="slide"
+            )
+        reviews(
+            :reviews="reviews"
+            :sliderOptions="sliderOptions"
+            @changeProgress="changeProgress"
+        )
+
+script(type="text/x-template")#reviews-btns
+    .reviews__buttons
+        button(@click="$emit('slide', 'prev')" :class="getActive('prev')").reviews__button.reviews__button--left
+            +icon('left', 'work__click active')
+        button(@click="$emit('slide', 'next')" :class="getActive('next')").reviews__button.reviews__button--right
+            +icon('right', 'work__click active')
+
+script(type="text/x-template")#reviews-content
+    .reviews__content 
+        swiper(ref="slider" :options="sliderOptions") 
+            swiper-slide(v-for="review in reviews" :key="review.id").reviews__item
+                +icon('quote', 'reviews__quote')
+                .reviews__item--main
+                    .reviews__text {{review.text}}
+                    .reviews__info 
+                        img(:src="review.pic").reviews__image
+                        .reviews__profile 
+                            .reviews__name {{review.name}}
+                            .reviews__position {{review.occ}}
+                

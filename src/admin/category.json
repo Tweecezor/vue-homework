@@ -1,0 +1,21 @@
+[{
+        "id": 0,
+        "caption": "workflow",
+        "skills": [
+            { "id": 0, "name": "GIT", "percent": 80 },
+            { "id": 1, "name": "GIT2", "percent": 80 },
+            { "id": 2, "name": "GIT3", "percent": 80 },
+            { "id": 3, "name": "GIT4", "percent": 80 }
+        ]
+    },
+    {
+        "id": 1,
+        "caption": "backend",
+        "skills": [
+            { "id": 0, "name": "PHP", "percent": 80 },
+            { "id": 1, "name": "PHP2", "percent": 80 },
+            { "id": 2, "name": "PHP3", "percent": 80 },
+            { "id": 3, "name": "PHP4", "percent": 80 }
+        ]
+    }
+]

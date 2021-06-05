@@ -1,0 +1,38 @@
+@import "../../../styles/mixins.pcss";
+.skill {
+  &__add {
+    &-component {
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+  }
+  &__percent {
+    width: 15%;
+    &:before {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translate(0, -55%);
+      content: "%";
+    }
+    &.center input {
+      padding-left: 15px;
+    }
+    @include tablets {
+      width: 35%;
+    }
+  }
+  &__name {
+    width: 50%;
+    @include tablets {
+      width: 35%;
+    }
+  }
+  &__add {
+    margin-left: 21px;
+    &.blocked {
+      pointer-events: none;
+    }
+  }
+}
